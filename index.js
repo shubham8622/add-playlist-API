@@ -2,8 +2,10 @@ const express = require("express");
 require('./Database/index');
 const Playlist = require("./Schema/playlist");
 const app = express();
+const cors = require('cors');
 const port = process.env.PORT || 3000;
 app.use(express.json());
+app.use(cors());
 
 
 app.get('/playlists', async (req,res)=>{
